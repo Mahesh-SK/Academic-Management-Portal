@@ -1,0 +1,64 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="Homepage/Homepage.css">
+    </head>
+
+    <body>
+        <header>
+             <h1>Student Training </h1>
+      <div class="stats">
+        <span>Total Students: <b id="total">0</b></span>
+        <span>Placed: <b id="completed">0</b></span>
+        <span>In Training: <b id="pending">0</b></span>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="controls">
+        <input id="nameInput" placeholder="Student Name (Enter to add)" />
+        <input type="date" id="join" />
+        <select id="course">
+          <option value="java">Java Full Stack</option>
+          <option value="mern">MERN Stack</option>
+          <option value="devops">DevOps</option>
+        </select>
+        <select id="batch">
+          <option value="Morning">Morning Batch</option>
+          <option value="Afternoon">Afternoon Batch</option>
+          <option value="Evening">Evening Batch</option>
+        </select>
+        <button id="btn" onclick="addStudent()">Add</button>
+      </div>
+
+      <div class="search-sort">
+        <input
+          placeholder="Search student..."
+          oninput="search=this.value;render()"
+        />
+        <select onchange="sort=this.value;render()">
+          <option value="">Sort</option>
+          <option value="course">Course</option>
+          <option value="join">Joining Date</option>
+        </select>
+      </div>
+
+      <div class="filters">
+        <button onclick="setFilter('all',this)">All</button>
+        <button onclick="setFilter('pending',this)">In Training</button>
+        <button onclick="setFilter('completed',this)">Placed</button>
+      </div>
+
+      <div id="list"></div>
+
+      <button class="clear" onclick="clearPlaced()">Clear Placed</button>
+    </div>
+
+        <script src="Homepage/Homepage.js"></script>
+    </body>
+
+    </html>
