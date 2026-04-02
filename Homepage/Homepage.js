@@ -27,8 +27,7 @@ function render() {
     }
     if (sort === "course")
         data.sort((a, b) => a.course.localeCompare(b.course));
-    if (sort === "join")
-        data.sort((a, b) => (a.join || "").localeCompare(b.join || ""));
+   
 
     list.innerHTML = "";
     data.forEach((s) => {
